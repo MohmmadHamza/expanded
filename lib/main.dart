@@ -12,34 +12,38 @@ class MyApp extends StatelessWidget
       home: Scaffold(
 
         body: SafeArea(
-          child:Row(
+          child:Column(
             children: [
-              Container(
-
-                padding:EdgeInsets.all(20),
-                color: Colors.red,
-                child: Text('1'),
-              ),
-
-             Expanded(
-               flex: 11,
-               child:
-             Container(
-
-               padding: EdgeInsets.all(20),
-               color: Colors.blue,
-               child:Text('2'),
-             ),
-             ),
               Expanded(
-                flex: 20,
-                child: Container(
+                flex: 8,
+                child:
+              Container(
+                constraints: BoxConstraints.expand(),
+                color: Colors.red,
+                child: Center(child: Text('8',
+                  style: TextStyle(
+                      color: Colors.white,
+                fontSize: 30
+                  ),
+                )s
+                ),
+              ),
+              ),
+             Expanded(
+               flex: 5,
+               child: Container(
+               constraints: BoxConstraints.expand(),
+               color: Colors.indigo,
+               child:Center(child:Text('5',
+                 style: TextStyle(
+                     color:Colors.white,
+                   fontSize: 30,
+                 ),
+               ),
+               ),
+             ),
+             ),
 
-                padding: EdgeInsets.all(20),
-                color: Colors.amber,
-                child:Text('3'),
-              ),
-              ),
             ],
           ),
         ),
