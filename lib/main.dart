@@ -14,40 +14,87 @@ class MyApp extends StatelessWidget
         body: SafeArea(
           child:Column(
             children: [
-              Expanded(
-                flex: 8,
-                child:
-              Container(
-                constraints: BoxConstraints.expand(),
+              customeContainer(
+                number: 8,
                 color: Colors.red,
-                child: Center(child: Text('8',
-                  style: TextStyle(
-                      color: Colors.white,
-                fontSize: 30
-                  ),
-                )s
+              ),
+              Expanded(
+                flex: 5,
+                child: Row(
+                  children: [
+                    customeContainer(
+                      number: 5,
+                      color: Colors.blueAccent,
+                    ),
+                    
+                    Expanded(
+                      flex: 3,
+                      child: Column(
+                        children: [
+                          Expanded(
+                            flex: 2,
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  flex: 1,
+                                  child: Column(
+                                    children: [
+                                      customeContainer(
+                                        number: 1,
+                                        color: Colors.green,
+                                      ),
+                                      customeContainer(
+                                        number: 1,
+                                        color: Colors.blue,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                customeContainer(
+                                  number: 2,
+                                  color: Colors.brown,
+                                ),
+                              ],
+                            ),
+                          ),
+                          
+                          
+                          customeContainer(
+                            number: 3,
+                            color: Colors.purple,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              ),
-             Expanded(
-               flex: 5,
-               child: Container(
-               constraints: BoxConstraints.expand(),
-               color: Colors.indigo,
-               child:Center(child:Text('5',
-                 style: TextStyle(
-                     color:Colors.white,
-                   fontSize: 30,
-                 ),
-               ),
-               ),
-             ),
-             ),
-
             ],
           ),
         ),
       ),
     );
   }
+}
+
+
+Widget customeContainer({
+  required int number,
+  required Color color,
+})
+{
+  return  Expanded(
+    flex: number,
+    child: Container(
+      constraints: BoxConstraints.expand(),
+      color: color,
+      child:Center(child:Text('${number}',
+        style: TextStyle(
+          color:Colors.white,
+          fontSize: 30,
+        ),
+      ),
+      ),
+    ),
+  );
 }
